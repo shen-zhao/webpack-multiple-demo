@@ -66,9 +66,8 @@ Projet
    │    ├─ dialog.scss    
    │    └─ index.scss··· 各页面css
    │    
-   │
-   │
-   └- templates  html模板(供art-template使用)
+   └─ templates  html模板(供art-template使用)
+│ 
 ├──build.js  页面打包配置
 ```
 
