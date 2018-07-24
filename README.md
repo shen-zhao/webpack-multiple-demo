@@ -80,21 +80,21 @@ Projet
 
 ## js
 
-- 每个页面只有一个js入口, 存放在js目录中
-- node_modules依赖除去比较大的插件(echarts等), 全部打入vendors.js中
+- 每个页面只有一个js入口，存放在js目录中
+- node_modules依赖除去比较大的插件(echarts等), 全部打入vendors.js中
 - 本地依赖复合分离标准的全部打入commons.js中
 - stylesheet.js单独打包, 无需手动调用, 自动注入到每个页面中
 
 ## css/scss
 
-- 页面独立的css/scss由相应的js中import注入
+- 页面独立的css/scss由相应的js中import注入
 - 公共的css/scss由stylesheet.js
 
 ## html
 
 inc(html碎片)
 
-- 在入口页面用`${require(<path>)}`语法使用(代替#parse()), path为入口页面的相对地址
+- 在入口页面用`${require(<path>)}`语法使用(代替#parse()), path为入口页面的相对地址
 
 template(html模板)
 
@@ -113,7 +113,7 @@ template(html模板)
 # 约定规则
 
 ## build.js
-项目根目录创建build.js, 用来指定打包页面入口, 开发某个页面之前必须首先配置页面信息, 示例: 
+项目根目录创建build.js, 用来指定打包页面入口, 开发某个页面之前必须首先配置页面信息, 示例: 
 
 ```js
 /* 
@@ -153,9 +153,9 @@ module.exports = [
 ];
 ```
 
-## 资源路径
+## 资源路径
 
-1.页面入口引入html碎片制定语法: `${require(<path>)}`, 另外, 模板中还可以引入其他模板, 示例: 
+1.页面入口引入html碎片制定语法: `${require(<path>)}`, 另外, 模板中还可以引入其他模板, 示例: 
 
 ```html
 <!DOCTYPE html>
@@ -189,14 +189,14 @@ ${ require('../inc/index.html') }
 
 ## 语法
 
-1.支持ES2015、ES2016和ES2017, 以及stage-2阶段的语法, 最后统一编译成浏览器兼容语法
+1.支持ES2015、ES2016和ES2017, 以及stage-2阶段的语法, 最后统一编译成浏览器兼容语法
 
 2.模块引入
 
 js文件
 - 使用imoort语法, 建议node_modules依赖前置, 本地依赖次之
 - 扩展名js、json可省略
-- @代表/src, 例如引入index.js, `import index from '@/js/index'`
+- @代表/src, 例如引入index.js, `import index from '@/js/index'`
 
 html文件
 - 使用${require(<!path>)}
