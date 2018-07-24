@@ -15,8 +15,9 @@ webpack打包多页面应用
 
 **生产**
 
-```npm run build locahost:8080 //(静态资源地址, 默认为/)```
+```npm run build //locahost:8080 //(静态资源地址, 默认为/)```
 
+注意：windows环境下静态资源路径必须为包含host的绝对路径
 
 
 # 项目结构

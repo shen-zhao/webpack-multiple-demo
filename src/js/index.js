@@ -12,7 +12,7 @@ const h2 = document.createElement('h2');
 
 const box = document.createElement('div');
 
-h1.innerHTML = '首页';
+h1.innerHTML = '我又变回去了';
 
 document.body.appendChild(h1);
 

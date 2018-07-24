@@ -9,8 +9,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const jsTemplate = `import $ from 'jquery';\nimport urlmap from '@/js/urlmap';\nimport template from '@/js/lib/template';`;
 const env = process.env.NODE_ENV;
 
-exports.resolve =  dir => {
-    return path.posix.join(__dirname, '..', dir);
+exports.resolve = dir => {
+    return path.join(__dirname, '..', dir);
 }
 
 function fsExistsTest (baseUrl, realPath) { //检测脚本是否存在，不存在则创建

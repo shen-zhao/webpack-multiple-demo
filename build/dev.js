@@ -9,6 +9,12 @@ const webpackConfig = require('./webpack.config');
 
 const devWebpackConfig = merge(webpackConfig, {
     devtool: 'cheap-source-map',
+    watch: true,
+    watchOptions: {
+        aggregateTimeout: 300,
+        poll: 500,
+        ignored: /node_modules/
+    },
     plugins: [
         new CopyWebpackPlugin([
             {
@@ -22,6 +28,10 @@ const devWebpackConfig = merge(webpackConfig, {
         ])
     ]
 });
+
+module.exports = {
+    ...devWebpackConfig
+}
 
 rm('dev', err => {
     if(err) throw err;

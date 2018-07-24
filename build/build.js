@@ -14,7 +14,6 @@ spinner.start();
 
 const prodWebpackConfig = merge(webpackConfig, {
     mode: 'production',
-    watch: false,
     output: {
         publicPath: utils.publicPath()
     },

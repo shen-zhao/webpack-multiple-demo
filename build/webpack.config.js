@@ -94,11 +94,5 @@ module.exports = {
     },
     plugins: [
         ...pageConf.htmlArr, //实例多页面入口
-    ],
-    watch: true,
-    watchOptions: {
-        aggregateTimeout: 300,
-        poll: 500,
-        ignored: /node_modules/
-    }
+    ]
 }
