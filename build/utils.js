@@ -61,13 +61,14 @@ exports.dealPageConf = baseUrl => {
         //html
         htmlConfig.filename = `./vm/${obj.template}.html`;
         htmlConfig.template = `./src/pages/${obj.template}.html`;
-        htmlConfig.inject = true;
-        htmlConfig.chunks = [obj.template];
+        htmlConfig.chunksSortMode = 'manual';
+        htmlConfig.chunks = [];
         htmlConfig.chunks.push('manifest')
         obj.stylesheet !== false && htmlConfig.chunks.push('stylesheet')
         obj.vendors && (htmlConfig.chunks.push('vendors'));
         obj.commons && (htmlConfig.chunks.push('commons'));
         obj.echarts && (htmlConfig.chunks.push('echarts'));
+        htmlConfig.chunks.push(obj.template);
 
         htmlArr.push(
             new HtmlWebpackPlugin(htmlConfig)
