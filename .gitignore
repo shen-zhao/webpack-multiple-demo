@@ -1,0 +1,42 @@
+# Logs
+logs
+*.log
+
+# Numerous always-ignore extensions
+*.bak
+*.patch
+*.diff
+*.err
+
+# temp file for git conflict merging
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.zip
+*.vi
+
+# OS or Editor folders
+.DS_Store
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+*.sublime-project
+*.sublime-workspace
+nbproject
+thumbs.db
+*.iml
+
+# Dependency directory
+node_modules/
+dev/
+dist/
+test.html
+_*.*
+.hg
+.svn
+.CVS
+.idea
