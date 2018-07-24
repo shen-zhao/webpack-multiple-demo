@@ -81,14 +81,14 @@ Projet
 ## js
 
 - 每个页面只有一个js入口, 存放在js目录中
-- node_modules依赖除去比较大的插件(echarts等), 全部打入vendors.js中
-- 本地依赖复合分离标准的全部打入commons.js中
-- stylesheet.js单独打包, 无需手动调用, 自动注入到每个页面中
+- `node_modules`依赖除去比较大的插件(`echarts`等), 全部打入`vendors.js`中
+- 本地依赖复合分离标准的全部打入`commons.js`中
+- `stylesheet.js`单独打包, 无需手动调用, 自动注入到每个页面中
 
 ## css/scss
 
-- 页面独立的css/scss由相应的js中`import`注入
-- 公共的css/scss由stylesheet.js
+- 页面独立的`css/scss`由相应的js中`import`注入
+- 公共的`css/scss`由`stylesheet.js`
 
 ## html
 
