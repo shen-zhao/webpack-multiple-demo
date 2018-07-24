@@ -80,29 +80,29 @@ Projet
 
 ## js
 
-- 每个页面只有一个js入口，存放在js目录中
+- 每个页面只有一个js入口, 存放在js目录中
 - node_modules依赖除去比较大的插件(echarts等), 全部打入vendors.js中
 - 本地依赖复合分离标准的全部打入commons.js中
 - stylesheet.js单独打包, 无需手动调用, 自动注入到每个页面中
 
 ## css/scss
 
-- 页面独立的css/scss由相应的js中import注入
+- 页面独立的css/scss由相应的js中`import`注入
 - 公共的css/scss由stylesheet.js
 
 ## html
 
 inc(html碎片)
 
-- 在入口页面用`${require(<path>)}`语法使用(代替#parse()), path为入口页面的相对地址
+- 在入口页面用`${require(<path>)}`语法使用`(代替#parse())`, path为入口页面的相对地址
 
 template(html模板)
 
-- 在js中import引入, 供字符串模板使用
+- 在js中`import`引入, 供字符串模板使用
 
 ## img、vedio、audio等静态资源
 
-- 可直接在html碎片、html模板已经style中根据相对路径引用
+- 可直接在html碎片、html模板以及style中根据相对路径引用
 
 ## mock
 
@@ -113,7 +113,7 @@ template(html模板)
 # 约定规则
 
 ## build.js
-项目根目录创建build.js, 用来指定打包页面入口, 开发某个页面之前必须首先配置页面信息, 示例: 
+项目根目录创建`build.js`, 用来指定打包页面入口, 开发某个页面之前必须首先配置页面信息, 示例: 
 
 ```js
 /* 
@@ -175,7 +175,7 @@ ${ require('../inc/index.html') }
 </html>
 ```
 
-2.img、vedio、audio等标签引入资源可以直接src='相对路径', 也可以用src='${ require(<!path>) }'方式, 示例: 
+2.img、vedio、audio等标签引入资源可以直接`src='相对路径'`, 也可以用`src='${ require(<!path>) }'`方式, 示例: 
 
 ```html
 <div>
@@ -189,19 +189,19 @@ ${ require('../inc/index.html') }
 
 ## 语法
 
-1.支持ES2015、ES2016和ES2017, 以及stage-2阶段的语法, 最后统一编译成浏览器兼容语法
+1.支持`ES2015`、`ES2016`和`ES2017`, 以及`stage-2`阶段的语法, 最后统一编译成浏览器兼容语法
 
 2.模块引入
 
 js文件
-- 使用imoort语法, 建议node_modules依赖前置, 本地依赖次之
-- 扩展名js、json可省略
+- 使用`import`语法, 建议`node_modules`依赖前置, 本地依赖次之
+- 扩展名`js`、`json`可省略
 - @代表/src, 例如引入index.js, `import index from '@/js/index'`
 
 html文件
-- 使用${require(<!path>)}
+- 使用`${require(<!path>)}`
 
-3.建议js格式见src/js/_suggest.js(大家提出合理改进意见)
+3.建议js格式见`src/js/_suggest.js`(大家提出合理改进意见)
 
 
 # 改进
