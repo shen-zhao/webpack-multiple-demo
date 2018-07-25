@@ -21,11 +21,11 @@ const devWebpackConfig = merge(webpackConfig, {
         new CopyWebpackPlugin([
             {
                 from: utils.resolve('src/mock/js'),
-                to: path.posix.resolve(config.dev.assetsRoot, 'vm')
+                to: path.resolve(config.dev.assetsRoot, 'vm')
             },
             {
                 from: utils.resolve('src/mock/json'),
-                to: path.posix.resolve(config.dev.assetsRoot, 'mock/json')
+                to: path.resolve(config.dev.assetsRoot, 'mock/json')
             }
         ]),
         new ProgressBarPlugin()
