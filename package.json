@@ -38,6 +38,7 @@
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.6",
     "postcss-url": "^7.3.2",
+    "progress-bar-webpack-plugin": "^1.11.0",
     "purgecss-webpack-plugin": "^1.2.0",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.6.2",

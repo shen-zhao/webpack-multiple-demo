@@ -191,17 +191,19 @@ ${ require('../inc/index.html') }
 
 1.支持`ES2015`、`ES2016`和`ES2017`, 以及`stage-2`阶段的语法, 最后统一编译成浏览器兼容语法
 
-2.模块引入
+2.html(包括/pages、/inc)中支持使用`velocity`语法(需`velocity服务器`支持, 不支持`#parse`)
 
-js文件
+3.模块引入
+
+  js文件
 - 使用`import`语法, 建议`node_modules`依赖前置, 本地依赖次之
 - 扩展名`js`、`json`可省略
 - @代表/src, 例如引入index.js, `import index from '@/js/index'`
 
-html文件
+  html文件
 - 使用`${require(<!path>)}`
 
-3.建议js格式见`src/js/_suggest.js`(大家提出合理改进意见)
+4.建议js格式见`src/js/_suggest.js`(大家提出合理改进意见)
 
 
 # 改进

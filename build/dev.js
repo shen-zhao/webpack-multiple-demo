@@ -3,11 +3,13 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const config = require('../config');
 const utils = require('./utils');
 const webpackConfig = require('./webpack.config');
 
 const devWebpackConfig = merge(webpackConfig, {
+    mode: 'development',
     devtool: 'cheap-source-map',
     watch: true,
     watchOptions: {
@@ -25,7 +27,8 @@ const devWebpackConfig = merge(webpackConfig, {
                 from: utils.resolve('src/mock/json'),
                 to: path.posix.resolve(config.dev.assetsRoot, 'mock/json')
             }
-        ])
+        ]),
+        new ProgressBarPlugin()
     ]
 });
 

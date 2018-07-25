@@ -7,7 +7,6 @@ const pageConf = utils.dealPageConf(baseUrl);
 const env = process.env.NODE_ENV;
 
 module.exports = {
-    mode: 'development',
     context: path.resolve(__dirname, '../'),
     entry: {
         ...pageConf.entryMap,

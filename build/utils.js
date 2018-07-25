@@ -61,10 +61,10 @@ exports.dealPageConf = baseUrl => {
         //html
         htmlConfig.filename = `./vm/${obj.template}.html`;
         htmlConfig.template = `./src/pages/${obj.template}.html`;
-        htmlConfig.chunksSortMode = 'manual';
+        htmlConfig.chunksSortMode = 'manual'; //注入循序，手册排序，如果按依赖排序会导致common style优先级高于self style
         htmlConfig.chunks = [];
-        htmlConfig.chunks.push('manifest')
-        obj.stylesheet !== false && htmlConfig.chunks.push('stylesheet')
+        htmlConfig.chunks.push('manifest');  //初步认为是用来维护模块之间的以来关系的
+        obj.stylesheet !== false && htmlConfig.chunks.push('stylesheet');
         obj.vendors && (htmlConfig.chunks.push('vendors'));
         obj.commons && (htmlConfig.chunks.push('commons'));
         obj.echarts && (htmlConfig.chunks.push('echarts'));

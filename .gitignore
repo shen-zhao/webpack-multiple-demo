@@ -34,7 +34,7 @@ thumbs.db
 node_modules/
 dev/
 dist/
-test.html
+test.*
 .hg
 .svn
 .CVS

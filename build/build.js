@@ -28,8 +28,9 @@ const prodWebpackConfig = merge(webpackConfig, {
             parallel: true,
             uglifyOptions: {
                 ie8: true,
+                safari10: true,
                 compress: {
-                    drop_console: false
+                    drop_console: true
                 },
                 warnings: false
             }
