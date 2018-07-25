@@ -81,8 +81,8 @@ Projet
 ## js
 
 - 每个页面只有一个js入口, 存放在js目录中
-- `node_modules`依赖除去比较大的插件(`echarts`等), 全部打入`vendors.js`中
-- 本地依赖复合分离标准的全部打入`commons.js`中
+- `node_modules`依赖除去比较大的插件(`echarts`等), 全部打入`vendors.js`中, 注: 单一模块引用超过五次才会分离, 最小chunk50kb
+- 本地依赖符合分离标准的全部打入`commons.js`中, 注: 单一模块引用超过五次才会分离, 最小chunk50kb
 - `stylesheet.js`单独打包, 无需手动调用, 自动注入到每个页面中
 
 ## css/scss
@@ -106,8 +106,9 @@ template(html模板)
 
 ## mock
 
-- 开发环境可以正常使用两种mock
-- 生产环境删除mock
+- mock目录下包括同步的`js`假数据和异步的`json`假数据
+- 开发环境可以正常使用两种`mock`
+- 生产环境删除`mock`
 
 
 # 约定规则
