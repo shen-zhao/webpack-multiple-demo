@@ -14,7 +14,7 @@ module.exports = {
     },
     output: {
         path: env === 'production' ? config.build.assetsRoot : config.dev.assetsRoot,
-        filename: utils.assetsPath('js/[name].[chunkhash].js')
+        filename: utils.assetsPath('js/[name].[chunkhash:8].js')
     },
     resolve: {
         alias: {
@@ -67,7 +67,7 @@ module.exports = {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'file-loader',
                 options: {
-                    name: utils.assetsPath('img/[name].[hash].[ext]'),
+                    name: utils.assetsPath('img/[name].[hash:8].[ext]'),
                     publicPath: env === 'production' ? utils.publicPath() : '../'
                 },
                 include: [utils.resolve('src')]
@@ -76,7 +76,7 @@ module.exports = {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
                 loader: 'file-loader',
                 options: {
-                    name: utils.assetsPath('font/[name].[hash].[ext]')
+                    name: utils.assetsPath('font/[name].[hash:8].[ext]')
                 },
                 include: [utils.resolve('src')]
             },
@@ -84,7 +84,7 @@ module.exports = {
                 test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
                 loader: 'file-loader',
                 options: {
-                    name: utils.assetsPath('media/[name].[hash].[ext]'),
+                    name: utils.assetsPath('media/[name].[hash:8].[ext]'),
                     publicPath: env === 'production' ? utils.publicPath() : '../'
                 },
                 include: [utils.resolve('src')]

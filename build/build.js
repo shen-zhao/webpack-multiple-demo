@@ -19,7 +19,7 @@ const prodWebpackConfig = merge(webpackConfig, {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: utils.assetsPath('styles/[name].[hash].css')
+            filename: utils.assetsPath('styles/[name].[hash:8].css')
         }),
         new OptimizeCSSPlugin({
             cssProcessorOptions: { safe: true }
