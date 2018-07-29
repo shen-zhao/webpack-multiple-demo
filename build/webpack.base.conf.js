@@ -76,7 +76,8 @@ module.exports = {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
                 loader: 'file-loader',
                 options: {
-                    name: utils.assetsPath('font/[name].[hash:8].[ext]')
+                    name: utils.assetsPath('font/[name].[hash:8].[ext]'),
+                    publicPath: env === 'production' ? utils.publicPath() : '../'
                 },
                 include: [utils.resolve('src')]
             },

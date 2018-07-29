@@ -19,14 +19,14 @@ const prodWebpackConfig = merge(webpackConfig, {
             cssProcessorOptions: { safe: true }
         }),
         new uglifyjsWebpackPlugin({
+            test: /\.js($|\?)/i,
             parallel: true,
+            cache: true,
             uglifyOptions: {
                 ie8: true,
-                safari10: true,
                 compress: {
                     drop_console: true
-                },
-                warnings: false
+                }
             }
         })
     ],
