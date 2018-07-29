@@ -1,0 +1,18 @@
+.table_dark {
+    font-size: 14px;
+    th {
+        padding: 11px 10px;
+        background: #4A4A4A;
+        &, a {
+            color: #fff;
+        }
+    }
+    tr {
+        color: #b4b4b4;
+        border-bottom: 1px solid #F1F1F1;
+    }
+    td {
+        padding: 18px 10px;
+    }
+
+}

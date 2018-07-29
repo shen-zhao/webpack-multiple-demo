@@ -1,5 +1,25 @@
-const h5 = document.createElement('h5');
+import $ from 'jquery';
+import './lib/jquery.pagination';
 
-h5.innerHTML = '哈哈哈，我是H5，我变了，哈哈哈哈哈';
+function pagination(elem, options) {
+    const config = {
+        current_page: options.current,
+        items_per_page: options.limit,
+        page_index: 1,
+        num_edge_entries: 1,
+        num_display_entries: 5,
+        prev_text: '&lt;',
+        next_text: '&gt;',
+        load_first_page: false,
+        link_to: '#__id__',
+        cut_limit_need: true,
+        show_if_single_page: true,
+        total_count_need: true
+    };
+    $.extend(config, options);
+    $(elem).pagination(options.count, config);
+}
 
-document.body.appendChild(h5);
+export {
+    pagination
+};

@@ -14,46 +14,12 @@ module.exports = {
   // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
   // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
   extends: 'eslint:recommended',
-  // check if imports actually resolve
-  // settings: {
-  //     "import/resolver": {
-  //         webpack: {
-  //             config: "build/webpack.base.conf.js"
-  //         }
-  //     }
-  // },
-  // add your custom rules here
-  // 下面这些rules是用来设置从插件来的规范代码的规则，使用必须去掉前缀eslint-plugin-
-  // 主要有如下的设置规则，可以设置字符串也可以设置数字，两者效果一致
-  // "off" -> 0 关闭规则
-  // "warn" -> 1 开启警告规则
-  // "error" -> 2 开启错误规则
   rules: {
-      // don"t require .vue extension when importing
-      // "import/extensions": ["error", "always", {
-      //     js: "never",
-      //     vue: "never"
-      // }],
-      // disallow reassignment of function parameters
-      // disallow parameter object manipulation except for specific exclusions
-    //   "no-param-reassign": ["error", {
-    //       props: true,
-    //       ignorePropertyModificationsFor: [
-    //           "state", // for vuex state
-    //           "acc", // for reduce accumulators
-    //           "e" // for e.returnvalue
-    //       ]
-    //   }],
-      // allow optionalDependencies
-      // "import/no-extraneous-dependencies": ["error", {
-      //     optionalDependencies: ["test/unit/index.js"]
-      // }],
-      // allow debugger during development
       "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
       "indent": 0, // 缩进4空格  tab
       "eqeqeq": 0,// 全等== ===  // 不强制
       "semi": 2, // 结尾分号 // 强制
-      "max-len": ["error", 150],
+      "max-len": ["error", 300],
       "comma-dangle": ["error", { // 结尾逗号  // 强制取消
           "arrays": "never",
           "objects": "never",
@@ -65,7 +31,7 @@ module.exports = {
       "object-curly-spacing": 0,// 对象字面量前后空格
       "quotes": ["error", "single"], // 强制单引号
       "no-multiple-empty-lines": ["error", {"max": 1}],// 空白行
-      "max-params": ["warn", {"maximum": 4}],// function最大入参
+      "max-params": ["warn", {"maximum": 6}],// function最大入参
       "func-names": 0,
       "no-unused-vars": 1,// 未引用的变量
       "no-underscore-dangle": 0,// 下划线开头命名

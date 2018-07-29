@@ -13,6 +13,10 @@ webpack打包多页面应用
 
 ```npm run dev```
 
+**测试**
+
+```npm run test //locahost:8080 //(静态资源地址, 默认为/)```
+
 **生产**
 
 ```npm run build //locahost:8080 //(静态资源地址, 默认为/)```

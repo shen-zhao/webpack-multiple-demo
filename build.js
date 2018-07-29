@@ -11,8 +11,7 @@ module.exports = [
         template: 'index',
         main: 'index.js',
         vendors: true,
-        commons: true,
-        echarts: true
+        commons: true
     },
     {
         template: 'detail',
@@ -25,14 +24,11 @@ module.exports = [
         template: 'list',
         main: 'list.js',
         vendors: true,
-        commons: true,
-        echarts: true
+        commons: true
     },
     {
         template: '404',
-        main: '404/404.js',
-        vendors: true,
-        commons: true,
-        echarts: true
+        main: '404.js',
+        stylesheet: false
     }
 ];

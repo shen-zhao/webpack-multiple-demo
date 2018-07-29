@@ -6,11 +6,11 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const config = require('../config');
 const utils = require('./utils');
-const webpackConfig = require('./webpack.config');
+const webpackConfig = require('./webpack.base.conf');
 
 const devWebpackConfig = merge(webpackConfig, {
     mode: 'development',
-    devtool: 'cheap-source-map',
+    devtool: 'source-map',
     watch: true,
     watchOptions: {
         aggregateTimeout: 300,
@@ -32,9 +32,7 @@ const devWebpackConfig = merge(webpackConfig, {
     ]
 });
 
-module.exports = {
-    ...devWebpackConfig
-}
+module.exports = devWebpackConfig;
 
 rm('dev', err => {
     if(err) throw err;

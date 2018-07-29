@@ -1,0 +1,40 @@
+body{ 
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    font-family: 14px/1.5 'Heiti SC', 'Microsoft Yahei', '宋体', sans-serif;
+}
+.error_container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1000px;
+    height: 580px;
+    margin-top: -290px;
+    margin-left: -500px;
+}
+.error_msg{
+    position: relative;
+    height: 580px;
+    padding: 304px 0 0 534px;
+    background: url(../assets/images/404.png) no-repeat;
+    box-sizing: border-box;
+    span,
+    a{
+        display: block;
+    }   
+}
+.error_text{
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #2778BE;
+}
+.error_gohome{
+    font-size: 18px;
+    color: #8D8D8D;
+    text-decoration:none;
+    outline:0;
+    &:hover{
+        text-decoration: underline;
+    }
+}

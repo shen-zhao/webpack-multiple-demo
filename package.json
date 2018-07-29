@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=production node build/build.js",
-    "dev": "cross-env NODE_ENV=development node build/dev.js"
+    "dev": "cross-env NODE_ENV=development node build/webpack.dev.conf.js",
+    "test": "cross-env NODE_ENV=production node build/webpack.test.conf.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^7.1.5",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.22.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-2": "^6.24.1",

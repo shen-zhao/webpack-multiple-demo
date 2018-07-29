@@ -1,0 +1,54 @@
+
+<table class="table text_center">
+    <thead>
+        <tr>
+            <th style="width: 80px;">序号</th>
+            <th class="th_col_4">
+                <a id="var_code" class="sort_search" href="#varCode">变量名称 <i data-id="" class="fa fa-sort"></i></a>
+            </th>
+            <th >变量描述</th>
+            <th style="width: 70px;">类型</th>
+            <th style="width: 130px;">变量分组</th>
+            <th style="width:130px;">所属API接口名称</th>
+            <th style="width: 137px;">
+                <a id="update_time" class="sort_search" href="#varCode">上次修改时间 <i data-id="" class="fa fa-sort"></i></a>
+            </th>
+            <th style="width: 70px;">状态</th>
+            <th style="width: 110px;">操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{if list && list.length > 0}}
+        {{each list}}
+        <tr data-id="{{$value.basicVarId}}">
+            <td>{{(current-1)*limit+$index+1}}</td>
+            <td >{{$value.varCode}}</td>
+            <td >{{$value.varName}}</td>
+            <td>{{if $value.varType == 0}} 未设置 {{else if $value.varType == 1}} int {{else if $value.varType == 2}} float {{else if $value.varType == 3}} double {{else if $value.varType == 4}} string {{else if $value.varType == 5}} boolean {{/if}}</td>
+            <td>{{$value.varGroupName}}</td>
+            <td class="">{{$value.ifsName}}</td>
+            <td>{{$value.updateTime | dateFormat 'yyyy-MM-dd hh:mm:ss'}}</td>
+            <td>{{if $value.varStatus == 0}} 未使用 {{else if $value.varStatus == 1}} 使用中 {{/if}}</td>
+            <td>
+                <a href="/manager/var/basic/detail?basicVarId={{$value.basicVarId}}"  class="tools_item">
+                    <i class="iconfont icon-eye"></i>
+                    <span class="tools_tip">查看</span>
+                </a>
+                <a href="javascript:void(0)" class="tools_item edit_btn">
+                    <i class="iconfont icon-pencil-alt"></i>
+                    <span class="tools_tip">修改</span>
+                </a>
+                <a href="javascript:void(0)" class="tools_item del_btn">
+                    <i class="iconfont icon-trash-alt"></i>
+                    <span class="tools_tip">删除</span>
+                </a>
+            </td>
+        </tr>
+        {{/each}}
+        {{else}}
+        <tr><td colspan="9">暂无数据{{data}}</td></tr>
+        {{/if}}
+    </tbody>
+</table>
+<div id="pagination"></div>
+    

@@ -1,0 +1,41 @@
+.table_line {
+    thead {
+        border-bottom: 2px solid #979797;
+    }
+    th {
+        padding: 8px 10px;
+        border-right: 3px solid #fff;
+        font-weight: bold;
+        &:last-child{
+            border-right: 0 none;
+        }
+    }
+    tr {
+        border-bottom: 1px dashed #F1F1F1;
+    }
+    td {
+        padding: 18px 10px;
+    }   
+    .item_subtitle {
+        background: #F6F6F6;
+        border-bottom: 0 none;
+        font-size: 16px;
+        td {
+            padding: 0 30px;
+            line-height: 45px;
+            text-align: left;
+        }
+        span {
+            margin-right: 26px;
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+    .item_sub_last {
+        border-bottom: 0 none;
+        &:last-child{
+            border-bottom: 1px dashed #F1F1F1;
+        }
+    }
+}

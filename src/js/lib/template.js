@@ -1,8 +1,5 @@
-import $ from 'jquery';
 import template from 'art-template/lib/template-web';
 import accounting from 'accounting';
-
-console.log($('body'));
 
 template.defaults.debug = false;
 

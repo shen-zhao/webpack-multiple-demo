@@ -56,8 +56,10 @@ exports.dealPageConf = baseUrl => {
 
     pages.forEach((obj, i) => {
         //entry
-        fsExistsTest(baseUrl, obj.main);
-        entryMap[obj.template] = baseUrl + obj.main;
+        if(obj.main) {
+            fsExistsTest(baseUrl, obj.main);
+            entryMap[obj.template] = baseUrl + obj.main;
+        }
         //html
         htmlConfig.filename = `./vm/${obj.template}.html`;
         htmlConfig.template = `./src/pages/${obj.template}.html`;
