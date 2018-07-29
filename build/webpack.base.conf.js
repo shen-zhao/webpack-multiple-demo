@@ -59,7 +59,7 @@ module.exports = {
                 loader: 'html-loader',
                 options: {
                     interpolate: 'require', //支持页面里面的require语法
-                    attrs: ['img:src', 'video:src', 'audio:src', 'link:href'] //修改静态资源前缀
+                    attrs: ['img:src', 'video:src', 'audio:src'] //修改静态资源前缀
                 },
                 include: [utils.resolve('src/pages'), utils.resolve('src/inc')]
             },
