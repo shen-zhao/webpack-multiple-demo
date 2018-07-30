@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const utils = require('./utils');
 const webpackConfig = require('./webpack.base.conf');
@@ -7,7 +8,7 @@ const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const uglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin');
 
 const prodWebpackConfig = merge(webpackConfig, {
-    mode: 'production',
+    mode: 'none',
     output: {
         publicPath: utils.publicPath()
     },
@@ -25,12 +26,23 @@ const prodWebpackConfig = merge(webpackConfig, {
             uglifyOptions: {
                 ie8: true,
                 compress: {
+                    properties: false,
                     drop_console: true
+                },
+                output: {
+                    keep_quoted_props: true,
+                    quote_keys: true
                 }
             }
-        })
+        }),
+        new webpack.optimize.ModuleConcatenationPlugin()
     ],
     optimization: {
+        removeEmptyChunks: true,
+        mergeDuplicateChunks: true,
+        flagIncludedChunks: true,
+        occurrenceOrder: true,
+        sideEffects: true,
         splitChunks: {
             minSize: 50000,
             name: false,
@@ -58,7 +70,10 @@ const prodWebpackConfig = merge(webpackConfig, {
         },
         runtimeChunk: {
             name: 'manifest'
-        }
+        },
+        noEmitOnErrors: true,
+        checkWasmTypes: true,
+        mangleWasmImports: true
     }
 })
 

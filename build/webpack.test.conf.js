@@ -5,9 +5,11 @@ const merge = require('webpack-merge');
 const utils = require('./utils');
 const webpackConfig = require('./webpack.base.conf');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+//压缩js
+const uglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin');
 
 const testWebpackConfig = merge(webpackConfig, {
-    mode: 'production',
+    mode: 'none',
     devtool: 'inline-cheap-source-map',
     output: {
         publicPath: utils.publicPath()
@@ -16,8 +18,27 @@ const testWebpackConfig = merge(webpackConfig, {
         new MiniCssExtractPlugin({
             filename: utils.assetsPath('styles/[name].[hash:8].css')
         }),
+        new uglifyjsWebpackPlugin({
+            test: /\.js($|\?)/i,
+            parallel: true,
+            cache: true,
+            uglifyOptions: {
+                ie8: true,
+                output: {
+                    beauty: true,
+                    keep_quoted_props: true,
+                    quote_keys: true
+                }
+            }
+        }),
+        new webpack.optimize.ModuleConcatenationPlugin()
     ],
     optimization: {
+        removeEmptyChunks: true,
+        mergeDuplicateChunks: true,
+        flagIncludedChunks: true,
+        occurrenceOrder: true,
+        sideEffects: true,
         splitChunks: {
             minSize: 50000,
             name: false,
@@ -46,7 +67,10 @@ const testWebpackConfig = merge(webpackConfig, {
         },
         runtimeChunk: {
             name: 'manifest'
-        }
+        },
+        noEmitOnErrors: true,
+        checkWasmTypes: true,
+        mangleWasmImports: true
     }
 })
 
