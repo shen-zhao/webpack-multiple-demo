@@ -25,7 +25,11 @@ const prodWebpackConfig = merge(webpackConfig, {
             uglifyOptions: {
                 ie8: true,
                 compress: {
+                    properties: false,
                     drop_console: true
+                },
+                mangle: {
+                    properties: true
                 }
             }
         })
