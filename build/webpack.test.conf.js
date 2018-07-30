@@ -25,9 +25,7 @@ const testWebpackConfig = merge(webpackConfig, {
             uglifyOptions: {
                 ie8: true,
                 output: {
-                    beauty: true,
-                    keep_quoted_props: true,
-                    quote_keys: true
+                    beauty: true
                 }
             }
         }),

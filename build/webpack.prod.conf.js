@@ -26,12 +26,7 @@ const prodWebpackConfig = merge(webpackConfig, {
             uglifyOptions: {
                 ie8: true,
                 compress: {
-                    properties: false,
                     drop_console: true
-                },
-                output: {
-                    keep_quoted_props: true,
-                    quote_keys: true
                 }
             }
         }),
