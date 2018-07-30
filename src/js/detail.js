@@ -80,6 +80,7 @@ function init() {
             _METHODS.initChart(data);
         })
         .catch(err => {
+            if (err instanceof Error) throw err;
             console.log(err || '系统异常');
         });
 }

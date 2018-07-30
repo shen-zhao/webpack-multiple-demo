@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const testWebpackConfig = merge(webpackConfig, {
     mode: 'production',
-    devtool: 'cheap-source-map',
+    devtool: 'inline-cheap-source-map',
     output: {
         publicPath: utils.publicPath()
     },
@@ -26,7 +26,7 @@ const testWebpackConfig = merge(webpackConfig, {
                     test: /[\\/]{1,2}node_modules[\\/]{1,2}(?!echarts)/,
                     name: 'vendors',
                     chunks: 'initial',
-                    minChunks: 5,
+                    minChunks: 3,
                     priority: 10, // 优先
                     enforce: true
                 },
@@ -34,7 +34,7 @@ const testWebpackConfig = merge(webpackConfig, {
                     test: /[\\/]src[\\/]/,
                     name: 'commons',
                     chunks: 'initial',
-                    minChunks: 5
+                    minChunks: 4
                 },
                 echarts: {
                     test: /[\\/]{1,2}node_modules[\\/]{1,2}echarts/,

@@ -67,8 +67,7 @@ exports.dealPageConf = baseUrl => {
         htmlConfig.chunks = [];
         htmlConfig.chunks.push('manifest');  //初步认为是用来维护模块之间的以来关系的
         obj.stylesheet !== false && htmlConfig.chunks.push('stylesheet');
-        obj.vendors && (htmlConfig.chunks.push('vendors'));
-        obj.commons && (htmlConfig.chunks.push('commons'));
+        obj.commons && ((htmlConfig.chunks.push('vendors')), htmlConfig.chunks.push('commons')),
         obj.echarts && (htmlConfig.chunks.push('echarts'));
         htmlConfig.chunks.push(obj.template);
 

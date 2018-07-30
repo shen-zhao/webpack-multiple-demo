@@ -25,11 +25,7 @@ const prodWebpackConfig = merge(webpackConfig, {
             uglifyOptions: {
                 ie8: true,
                 compress: {
-                    properties: false,
                     drop_console: true
-                },
-                mangle: {
-                    properties: true
                 }
             }
         })
@@ -43,14 +39,14 @@ const prodWebpackConfig = merge(webpackConfig, {
                     test: /[\\/]{1,2}node_modules[\\/]{1,2}(?!echarts)/,
                     name: 'vendors',
                     chunks: 'initial',
-                    minChunks: 4,
+                    minChunks: 3,
                     enforce: true
                 },
                 commons: {
                     test: /[\\/]src[\\/]/,
                     name: 'commons',
                     chunks: 'initial',
-                    minChunks: 5
+                    minChunks: 4
                 },
                 echarts: {
                     test: /[\\/]{1,2}node_modules[\\/]{1,2}echarts/,
