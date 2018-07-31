@@ -10,10 +10,6 @@
     "eslint": "eslint --ext .js src",
     "precommit": "npm run eslint && npm run mocklint"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/shen-zhao/webpack-multiple-demo.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
