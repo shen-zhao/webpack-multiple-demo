@@ -122,7 +122,8 @@ exports.cssLoaders = options => {
 
     return {
         'css': generateLoaders(),
-        'scss': generateLoaders('sass')
+        'scss': generateLoaders('sass'),
+        'less': generateLoaders('less')
     }
 }
 
