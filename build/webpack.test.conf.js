@@ -10,7 +10,7 @@ const uglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin');
 
 const testWebpackConfig = merge(webpackConfig, {
     mode: 'none',
-    devtool: 'inline-cheap-source-map',
+    devtool: 'source-map',
     output: {
         publicPath: utils.publicPath()
     },
@@ -18,25 +18,22 @@ const testWebpackConfig = merge(webpackConfig, {
         new MiniCssExtractPlugin({
             filename: utils.assetsPath('styles/[name].[hash:8].css')
         }),
+        new webpack.optimize.ModuleConcatenationPlugin(),
         new uglifyjsWebpackPlugin({
             test: /\.js($|\?)/i,
             parallel: true,
             cache: true,
+            sourceMap: true,
             uglifyOptions: {
-                ie8: true,
-                output: {
-                    beauty: true
-                }
+                ie8: true
             }
         }),
-        new webpack.optimize.ModuleConcatenationPlugin()
     ],
     optimization: {
-        removeEmptyChunks: true,
-        mergeDuplicateChunks: true,
         flagIncludedChunks: true,
         occurrenceOrder: true,
         sideEffects: true,
+        noEmitOnErrors: true,
         splitChunks: {
             minSize: 50000,
             name: false,
@@ -46,7 +43,6 @@ const testWebpackConfig = merge(webpackConfig, {
                     name: 'vendors',
                     chunks: 'initial',
                     minChunks: 3,
-                    priority: 10, // 优先
                     enforce: true
                 },
                 commons: {
@@ -65,10 +61,7 @@ const testWebpackConfig = merge(webpackConfig, {
         },
         runtimeChunk: {
             name: 'manifest'
-        },
-        noEmitOnErrors: true,
-        checkWasmTypes: true,
-        mangleWasmImports: true
+        }
     }
 })
 

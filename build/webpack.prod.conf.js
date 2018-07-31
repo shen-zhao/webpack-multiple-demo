@@ -33,11 +33,10 @@ const prodWebpackConfig = merge(webpackConfig, {
         new webpack.optimize.ModuleConcatenationPlugin()
     ],
     optimization: {
-        removeEmptyChunks: true,
-        mergeDuplicateChunks: true,
         flagIncludedChunks: true,
         occurrenceOrder: true,
         sideEffects: true,
+        noEmitOnErrors: true,
         splitChunks: {
             minSize: 50000,
             name: false,
@@ -65,10 +64,7 @@ const prodWebpackConfig = merge(webpackConfig, {
         },
         runtimeChunk: {
             name: 'manifest'
-        },
-        noEmitOnErrors: true,
-        checkWasmTypes: true,
-        mangleWasmImports: true
+        }
     }
 })
 
