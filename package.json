@@ -7,10 +7,9 @@
     "test": "cross-env NODE_ENV=production node build/webpack.test.conf.js",
     "build": "cross-env NODE_ENV=production node build/build.js",
     "dev": "cross-env NODE_ENV=development node build/webpack.dev.conf.js",
-    "mocklint": "files=`git diff --staged --name-only --diff-filter=ACMRTU | grep -iE '^[^/]+\\.js|.+\\.json$'`; if [ \"${files:=empty}\" != \"empty\" ]; then node ./node_modules/mocklint/index.js $files; fi",
-    "filenamelint": "node node_modules/validate_filename/index.js -e '^[a-z0-9\\-_./]+$|^src/App.vue$' -m '约定文件名由小写字母、数字、_ 、- 组成' `git diff --staged --name-only --diff-filter=ACMRTU -- ./src/**`",
+    "mocklint": "node ./node_modules/mocklint/index.js  -- ./src/mock/*/*.*",
     "eslint": "eslint --ext .js src",
-    "precommit": "npm run eslint && npm run mocklint && npm run filenamelint"
+    "precommit": "npm run eslint && npm run mocklint"
   },
   "keywords": [],
   "author": "",
