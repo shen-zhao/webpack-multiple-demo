@@ -194,12 +194,12 @@ ${ require('../inc/index.html') }
 
 3.模块引入
 
-  js文件
+js文件
 - 使用`import`语法, 建议`node_modules`依赖前置, 本地依赖次之
 - 扩展名`js`、`json`可省略
 - @代表/src, 例如引入index.js, `import index from '@/js/index'`
 
-  html文件
+html文件
 - 使用`${require(<!path>)}`
 
 4.建议js格式见`src/js/_suggest.js`(大家提出合理改进意见)
