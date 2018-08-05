@@ -15,11 +15,11 @@ webpack打包多页面应用
 
 **测试**
 
-```npm run test //locahost:8080 //(静态资源地址, 默认为/)```
+```npm run test //locahost:8080 (静态资源地址, 默认为/, 默认值可以在config/index.js/build.publicPath修改)```
 
 **生产**
 
-```npm run build //locahost:8080 //(静态资源地址, 默认为/)```
+```npm run build //locahost:8080 (静态资源地址, 默认为/, 默认值可以在config/index.js/build.publicPath修改)```
 
 注意：windows环境下静态资源路径必须为包含host的绝对路径
 
@@ -85,14 +85,14 @@ Projet
 ## js
 
 - 每个页面只有一个js入口, 存放在js目录中
-- `node_modules`依赖除去比较大的插件(`echarts`等), 全部打入`vendors.js`中, 注: 单一模块引用超过五次才会分离, 最小chunk50kb
-- 本地依赖符合分离标准的全部打入`commons.js`中, 注: 单一模块引用超过五次才会分离, 最小chunk50kb
+- `node_modules`依赖除去比较大的插件(`echarts`等), 全部打入`vendors.js`中, 注: 单一模块入口文件引用超过3次才会分离, 最小chunk50kb
+- 本地依赖符合分离标准的全部打入`commons.js`中, 注: 单一模块入口文件引用超过五次才会分离, 最小chunk50kb
 - `stylesheet.js`单独打包, 无需手动调用, 自动注入到每个页面中
 
-## css/scss
+## css/scss等
 
-- 页面独立的`css/scss`由相应的js中`import`注入
-- 公共的`css/scss`由`stylesheet.js`
+- 页面独立的`css/scss`等由相应的js中`import`注入
+- 公共的`css/scss`等由`stylesheet.js`统一注入
 
 ## html
 
@@ -112,7 +112,7 @@ template(html模板)
 
 - mock目录下包括同步的`js`假数据和异步的`json`假数据
 - 开发环境可以正常使用两种`mock`
-- 生产环境删除`mock`
+- 生产测试环境删除`mock`
 
 
 # 约定规则
@@ -209,7 +209,7 @@ ${ require('../inc/index.html') }
 
 # 改进
 
-大家提出改进意见
+js编写格式大家统一讨论得出结果
 
 # 参考资料
 
