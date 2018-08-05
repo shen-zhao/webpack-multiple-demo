@@ -18,16 +18,16 @@ function fsExistsTest (baseUrl, realPath) { //检测脚本是否存在，不存�
     const dirname = mkdir(realPath.split('/'), baseUrl);
     const isExists = fs.existsSync(dirname);
     if(!isExists) {
-        fs.writeFileSync(dirname, jsTemplate);
-    }
+        fs.writeFileSync(dirname, jsTemplate);              
+    }   
 }
 //递归创建目录，返回filename
 function mkdir(pathChip, baseUrl) {
     const currentChip = pathChip.shift();
     if(/\.js$/.test(currentChip)) {
-        return path.posix.join(baseUrl, currentChip);
+        return path.join(baseUrl, currentChip);
     }
-    const dirname = baseUrl + currentChip;
+    const dirname = path.join(baseUrl, currentChip);
     const isExists = fs.existsSync(dirname);
     if(isExists) {
         return mkdir(pathChip, dirname);
