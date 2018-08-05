@@ -30,8 +30,8 @@ webpack打包多页面应用
 Projet
 ├──build  webpack配置 
 ├──config  资源配置
-├──dist  生产产物, 用于代码调试
-├──dev  开发产物, 用于生产发布
+├──dist  生产产物, 用于生产发布
+├──dev  开发产物, 用于代码调试(页面入口dev/vm)
 ├──src
    ├─ assets  资源
    │    ├─ images  图片资源
