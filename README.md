@@ -132,24 +132,22 @@ module.exports = [
     {
         template: 'index',
         main: 'index.js',
-        commons: true,
         echarts: true
     },
     {
         template: 'detail',
         main: 'detail.js',
-        commons: true,
         echarts: true
     },
     {
         template: 'list',
         main: 'list.js',
-        commons: true,
         echarts: true
     },
     {
         template: '404',
         main: '404/404.js'
+        commons: false
     }
 ];
 ```
