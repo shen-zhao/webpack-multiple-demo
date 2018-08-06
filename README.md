@@ -76,5 +76,5 @@ Projet
 ├──build.js  页面打包配置
 ```
 
-
+## [doc](https://github.com/shen-zhao/webpack-multiple-demo/tree/master/doc)
 
